@@ -1,0 +1,5 @@
+name: PvPevent
+version: '${project.version}'
+main: com.kryeit.pvpevent.PvPevent
+api-version: 1.18
+authors: [ MuriPlz ]
