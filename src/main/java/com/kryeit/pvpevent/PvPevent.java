@@ -2,18 +2,12 @@ package com.kryeit.pvpevent;
 
 import com.kryeit.pvpevent.listener.onPlayerDeath;
 import com.kryeit.pvpevent.listener.onPlayerKill;
-import com.kryeit.pvpevent.rankings.EventData;
-import com.kryeit.pvpevent.rankings.PlayerDeaths;
-import com.kryeit.pvpevent.rankings.TotalKills;
-import com.kryeit.pvpevent.rankings.UniqueKills;
+import com.kryeit.pvpevent.rankings.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.TimeZone;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public final class PvPevent extends JavaPlugin {
 
@@ -21,6 +15,9 @@ public final class PvPevent extends JavaPlugin {
     public static UniqueKills uniqueKills;
     public static PlayerDeaths playerDeaths;
     public static EventData eventData;
+    public static KillStreak killStreak;
+
+    public static HashMap<UUID,List<UUID>> killStreaks = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -30,6 +27,7 @@ public final class PvPevent extends JavaPlugin {
             uniqueKills = new UniqueKills("plugins/PvPevent/uniqueKills");
             playerDeaths = new PlayerDeaths("plugins/PvPevent/playerDeaths");
             eventData = new EventData("plugins/PvPevent/eventData");
+            killStreak = new KillStreak("plugins/PvPevent/killStreak");
         } catch (IOException e) {
             e.printStackTrace();
         }

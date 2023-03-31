@@ -1,7 +1,6 @@
 package com.kryeit.pvpevent.listener;
 
 import com.kryeit.pvpevent.API;
-import com.kryeit.pvpevent.PvPevent;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -16,5 +16,6 @@ public class onPlayerDeath implements Listener {
         if(!API.isEventActive()) return;
         Player p = e.getEntity();
         PvPevent.playerDeaths.addDeath(p.getUniqueId());
+        PvPevent.killStreaks.remove(p.getUniqueId());
     }
 }
